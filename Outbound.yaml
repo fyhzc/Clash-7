@@ -225,7 +225,7 @@ proxy-providers:
 
   # 此处只是订阅示例，如果没有订阅链接的使用需求，此处及 proxy-groups 的相关内容可删除
 
-  DuckDuckGoList: #「冲鸭机场」订阅
+  Clash: #「冲鸭机场」订阅
     type: http
     url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash" # 放机场订阅链接
     interval: 3600
@@ -294,22 +294,20 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
-  # 代理节点选择
-  - name: "PROXY"
+ # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
+  - name: "🧭 𝐹𝑖𝑛𝑎𝑙 "
     type: select
     proxies:
-      - Fallback
-      - 1
-      - 2
-      - 3
-      - DuckDuckGo # 嵌套使用订阅节点策略组
+      - 🎯 𝐷𝑖𝑟𝑒𝑐𝑡
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
 
-  # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
-  - name: "MATCH"
+  # 代理节点选择
+  - name: "🖲️ 𝑃𝑟𝑜𝑥𝑦"
     type: select
     proxies:
-      - PROXY
-      - DIRECT
+      - 🎯 𝐷𝑖𝑟𝑒𝑐𝑡
+    use:
+      - Clash # 嵌套使用订阅节点策略组
 
   # 国际流媒体服务
   - name: "Streaming"
