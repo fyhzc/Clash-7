@@ -509,7 +509,7 @@ rule-providers:
 # 规则
 rules:
   # Unbreak
-  - RULE-SET,Unbreak,DIRECT
+  #- RULE-SET,Unbreak,DIRECT
 
   - RULE-SET,🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘,🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘
 
