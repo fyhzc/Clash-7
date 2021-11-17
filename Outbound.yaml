@@ -339,39 +339,39 @@ proxy-groups:
       - REJECT
 
   # 𝐺𝑙𝑜𝑏𝑎𝑙
-  # name: "𝐺𝑙𝑜𝑏𝑎𝑙"
-  #  type: select
-  #  proxies:
+  - name: "𝐺𝑙𝑜𝑏𝑎𝑙"
+    type: select
+    proxies:
       - PROXY
 
   # 𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎
-  # name: "𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎"
-  #  type: select
-  #  proxies:
+  - name: "𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎"
+    type: select
+    proxies:
       - PROXY
 
   # 𝐺𝑜𝑜𝑔𝑙𝑒
-  # name: "𝐺𝑜𝑜𝑔𝑙𝑒"
-  #  type: select
-  #  proxies:
+  - name: "𝐺𝑜𝑜𝑔𝑙𝑒"
+    type: select
+    proxies:
       - PROXY
 
   # 𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡
-  # name: "𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡"
-  #  type: select
-  #  proxies:
+  - name: "𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡"
+    type: select
+    proxies:
       - PROXY 
 
   # 𝑇𝑤𝑖𝑡𝑡𝑒𝑟
-  # name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
-  #  type: select
-  #  proxies:
+  - name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
+    type: select
+    proxies:
       - PROXY
 
   # 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚
-  # name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
-  #  type: select
-  #  proxies:
+  - name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
+    type: select
+    proxies:
       - PROXY
 
   # 国际流媒体服务
@@ -416,34 +416,41 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
     interval: 86400
 
-  𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔:
+  𝐺𝑙𝑜𝑏𝑎𝑙:
     type: http
     behavior: classical
-    path: ./Hijacking/Hijacking.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
+    path: ./Global/Global_Classical.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
     interval: 86400
 
-  Streaming:
+  𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎:
     type: http
     behavior: classical
-    path: ./RuleSet/StreamingMedia/Streaming.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    path: ./GlobalMedia/GlobalMedia.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
     interval: 86400
 
-  StreamingSE:
+  𝐺𝑜𝑜𝑔𝑙𝑒 :
     type: http
     behavior: classical
-    path: ./RuleSet/StreamingMedia/StreamingSE.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/StreamingSE.yaml
+    path: ./Google/Google.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
     interval: 86400
 
-  Global:
+  𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡:
     type: http
     behavior: classical
-    path: ./RuleSet/Global.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Global.yaml
+    path: ./Microsoft/Microsoft.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
 
+  𝑇𝑤𝑖𝑡𝑡𝑒𝑟:
+    type: http
+    behavior: classical
+    path: ./Twitter/Twitter.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
+    interval: 86400
+  
   China:
     type: http
     behavior: classical
