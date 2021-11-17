@@ -1,25 +1,25 @@
-# 本地 HTTP(S) 代理服务器端口
+# Port of HTTP(S) proxy server on the local end
 # port: 7890
 
-# 本地 SOCKS5 代理服务器的端口
+# Port of SOCKS5 proxy server on the local end
 # socks-port: 7891
 
-# Linux 和 macOS 的透明代理服务器端口 (Redirect TCP and TProxy UDP)
+# Transparent proxy server port for Linux and macOS (Redirect TCP and TProxy UDP)
 # redir-port: 7892
 
-# 用于Linux的透明代理服务器端口 (TProxy TCP and TProxy UDP)
+# Transparent proxy server port for Linux (TProxy TCP and TProxy UDP)
 # tproxy-port: 7893
 
-# 同一端口的 HTTP(S) 和 SOCKS5 服务器
+# HTTP(S) and SOCKS4(A)/SOCKS5 server on the same port
 mixed-port: 7890
 
-# 本地 SOCKS5 / HTTP(S) 服务器的身份验证
-# 验证:
+# authentication of local SOCKS5/HTTP(S) server
+# authentication:
 #  - "user1:pass1"
 #  - "user2:pass2"
 
-# 设置为 "true"，允许从本地端服务器连接到
-# 其他局域网IP地址
+# Set to true to allow connections to the local-end server from
+# other LAN IP addresses
 allow-lan: false
 
 # This is only applicable when `allow-lan` is `true`
@@ -74,6 +74,12 @@ hosts:
   'dl.google.com': 180.163.151.161
   'dl.l.google.com': 180.163.151.161
 
+profile:
+  # Store the `select` results in $HOME/.config/clash/.cache
+  # set false If you don't want this behavior
+  # when two different configurations have groups with the same name, the selected values are shared
+  store-selected: false
+
 # DNS server settings
 # This section is optional. When not present, the DNS server will be disabled.
 dns:
@@ -88,7 +94,7 @@ dns:
   enhanced-mode: redir-host # or fake-ip
   fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
   # use-hosts: true # lookup hosts and return IP record
-
+  
   # Hostnames in this list will not be resolved with fake IPs
   # i.e. questions to these domain names will always be answered with their
   # real IP addresses
@@ -112,8 +118,11 @@ dns:
   # involved. Clash answers the DNS question with the first result gathered.
   nameserver:
     - 119.29.29.29
+    # - 114.114.114.114 # default value
+    # - 8.8.8.8 # default value
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
     # - https://1.1.1.1/dns-query # DNS over HTTPS
+    # - dhcp://en0 # dns from dhcp
 
   # When `fallback` is present, the DNS server will send concurrent requests
   # to the servers in this section along with servers in `nameservers`.
@@ -133,14 +142,20 @@ dns:
   # are always used if not match `fallback-filter.ipcidr`.
   #
   # This is a countermeasure against DNS pollution attacks.
-  fallback-filter:
-    geoip: true
-    ipcidr:
-      # - 240.0.0.0/4
-    # domain:
-    #   - '+.google.com'
-    #   - '+.facebook.com'
-    #   - '+.youtube.com'
+  # fallback-filter:
+  #   geoip: true
+  #   geoip-code: CN
+  #   ipcidr:
+  #     - 240.0.0.0/4
+  #   domain:
+  #     - '+.google.com'
+  #     - '+.facebook.com'
+  #     - '+.youtube.com'
+  
+  # Lookup domains via specific nameservers
+  # nameserver-policy:
+  #   'www.baidu.com': '114.114.114.114'
+  #   '+.internal.crop.com': '10.0.0.1'
 
 #
 # https://github.com/Dreamacro/clash/wiki/premium-core-features
@@ -225,11 +240,11 @@ proxy-providers:
 
   # 此处只是订阅示例，如果没有订阅链接的使用需求，此处及 proxy-groups 的相关内容可删除
 
-  Clash: #「冲鸭机场」订阅
+  DuckDuckGoList: #「冲鸭机场」订阅
     type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash" # 放机场订阅链接
+    url: "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/ProxyList/List.yaml" # 放机场订阅链接
     interval: 3600
-    path: ./Proxy/Clash.yaml # 注意此处文件名不可相同
+    path: ./Proxy/List.yaml # 注意此处文件名不可相同
     health-check:
       enable: true
       interval: 600
@@ -294,18 +309,70 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
- # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
-  - name: "🧭 𝐹𝑖𝑛𝑎𝑙 "
+  # 代理节点选择
+  - name: "PROXY"
     type: select
     proxies:
-      - 🎯 𝐷𝑖𝑟𝑒𝑐𝑡
-      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
+      - Fallback
+      - 1
+      - 2
+      - 3
+      - DuckDuckGo # 嵌套使用订阅节点策略组
 
-  # 代理节点选择
-  - name: "🖲️ 𝑃𝑟𝑜𝑥𝑦"
+  # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
+  - name: "MATCH"
     type: select
-    use:
-      - Clash # 嵌套使用订阅节点策略组
+    proxies:
+      - PROXY
+      - DIRECT
+
+  # 𝐴𝑑𝐵𝑙𝑜𝑐𝑘
+  - name: "𝐴𝑑𝐵𝑙𝑜𝑐𝑘"
+    type: select
+    proxies:
+      - REJECT
+     
+  # 𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔
+  - name: "𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔"
+    type: select
+    proxies:
+      - REJECT
+
+  # 𝐺𝑙𝑜𝑏𝑎𝑙
+  - name: "𝐺𝑙𝑜𝑏𝑎𝑙"
+    type: select
+    proxies:
+      - PROXY
+
+  # 𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎
+  - name: "𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎"
+    type: select
+    proxies:
+      - PROXY
+
+  # 𝐺𝑜𝑜𝑔𝑙𝑒
+  - name: "𝐺𝑜𝑜𝑔𝑙𝑒"
+    type: select
+    proxies:
+      - PROXY
+
+  # 𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡
+  - name: "𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡"
+    type: select
+    proxies:
+      - PROXY 
+
+  # 𝑇𝑤𝑖𝑡𝑡𝑒𝑟
+  - name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
+    type: select
+    proxies:
+      - PROXY
+
+  # 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚
+  - name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
+    type: select
+    proxies:
+      - PROXY
 
   # 国际流媒体服务
   - name: "Streaming"
@@ -370,13 +437,6 @@ rule-providers:
     url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/China.yaml
     interval: 86400
 
-  ChinaIP:
-    type: http
-    behavior: ipcidr
-    path: ./RuleSet/Extra/ChinaIP.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/ChinaIP.yaml
-    interval: 86400
-
 # 规则
 rules:
   # Unbreak
@@ -404,13 +464,11 @@ rules:
   - IP-CIDR,100.64.0.0/10,DIRECT
   - IP-CIDR,224.0.0.0/4,DIRECT
   - IP-CIDR,fe80::/10,DIRECT
-
-  # （可选）使用来自 ipipdotnet 的 ChinaIP 以解决数据不准确的问题，使用 ChinaIP.yaml 时可禁用下列直至（包括）「GEOIP,CN」规则
-  # - RULE-SET,ChinaIP,DIRECT
+  
   # Tencent
   - IP-CIDR,119.28.28.28/32,DIRECT
   - IP-CIDR,182.254.116.0/24,DIRECT
   # GeoIP China
   - GEOIP,CN,DIRECT
 
-  - MATCH,🧭 𝐹𝑖𝑛𝑎𝑙
+  - MATCH,MATCH
