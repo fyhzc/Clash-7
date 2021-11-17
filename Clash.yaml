@@ -288,27 +288,6 @@ proxy-groups:
   #
   # 但如果订阅节点很多选起来就很麻烦，不如先嵌套一个策略组进行手动或自动的选择。
 
-  # 手动选择订阅节点
-  - name: "ClashList"
-    type: select # 亦可使用 fallback 或 load-balance
-    use: # 注意此处是「use」
-      - ClashList # 这是上面「proxy-providers」的名称
-
-  # - name: "US"
-  #   type: select # 亦可使用 fallback 或 load-balance
-  #   use: # 注意此处是「use」
-  #     - ClashList # 这是上面「proxy-providers」的名称
-
-  # Fallback 比较实用的策略组类型，用于测试服务器节点的可用性，当第一个节点不可用时切换到第二个，以此类推。
-  - name: "Fallback"
-    type: fallback
-    proxies:
-      - 1
-      - 2
-      - 3
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-
   # 代理节点选择
   - name: "🖲️ 𝑃𝑟𝑜𝑥𝑦"
     type: select
