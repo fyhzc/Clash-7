@@ -369,7 +369,7 @@ proxy-groups:
       - PROXY
 
   # 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚
-  - name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
+  - name: "𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚"
     type: select
     proxies:
       - PROXY
