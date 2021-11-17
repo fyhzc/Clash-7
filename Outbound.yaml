@@ -242,14 +242,14 @@ proxy-providers:
 
   DuckDuckGoList: #「冲鸭机场」订阅
     type: http
-    url: "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/ProxyList/List.yaml" # 放机场订阅链接
+    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash" # 放机场订阅链接
     interval: 3600
     path: ./Proxy/List.yaml # 注意此处文件名不可相同
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204
-
+      url: http://cp.cloudflare.com/generate_204
+  
   # DuckDuckGoUS: #「冲鸭机场」订阅美国地区节点
   #   type: http
   #   url: "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/ProxyList/US.yaml" # 放机场订阅链接
@@ -310,22 +310,18 @@ proxy-groups:
     interval: 300
 
   # 代理节点选择
-  - name: "PROXY"
+  - name: "🖲️ 𝑃𝑟𝑜𝑥𝑦"
     type: select
-    proxies:
-      - Fallback
-      - 1
-      - 2
-      - 3
-      - DuckDuckGo # 嵌套使用订阅节点策略组
+    use: # 注意此处是「use」
+      - DuckDuckGoList # 这是上面「proxy-providers」的名称
 
   # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
-  - name: "MATCH"
+  - name: "🧭 𝐹𝑖𝑛𝑎𝑙"
     type: select
     proxies:
-      - PROXY
-      - DIRECT
-
+     - DIRECT
+     - 🖲️ 𝑃𝑟𝑜𝑥𝑦
+      
   # 𝐴𝑑𝐵𝑙𝑜𝑐𝑘
   - name: "🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘"
     type: select
@@ -342,61 +338,61 @@ proxy-groups:
   - name: "📡 𝐺𝑙𝑜𝑏𝑎𝑙"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
 
   # 𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎
   - name: "📽️ 𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
 
   # 𝐺𝑜𝑜𝑔𝑙𝑒
   - name: "🌐 𝐺𝑜𝑜𝑔𝑙𝑒"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
 
   # 𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡
   - name: "🖥️ 𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡"
     type: select
     proxies:
-      - PROXY 
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
 
   # 𝑇𝑤𝑖𝑡𝑡𝑒𝑟
   - name: "📟 𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
 
   # 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚
   - name: "📲 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
    
   # 𝑌𝑜𝑢𝑇𝑢𝑏𝑒
   - name: "🎬 𝑌𝑜𝑢𝑇𝑢𝑏𝑒"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
     
   # 𝑁𝑒𝑡𝑓𝑙𝑖𝑥
   - name: "📺 𝑁𝑒𝑡𝑓𝑙𝑖𝑥"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
     
   # 𝐷𝑖𝑠𝑛𝑒𝑦+
   - name: "🐹 𝐷𝑖𝑠𝑛𝑒𝑦+"
     type: select
     proxies:
-      - PROXY
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
     
   # 𝐴𝑝𝑝𝑙𝑒
   - name: "🍎 𝐴𝑝𝑝𝑙𝑒"
     type: select
     proxies:
-      - PROXY 
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦 
     
 # 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
 
@@ -538,7 +534,7 @@ rules:
   # Global Area Network
 
   # (DNS Cache Pollution) / (IP Blackhole) / (Region-Restricted Access Denied) / (Network Jitter)
-  # RULE-SET,Global,PROXY
+  # RULE-SET,Global,🖲️ 𝑃𝑟𝑜𝑥𝑦
 
   # China Area Network
   - RULE-SET,China,DIRECT
@@ -558,4 +554,4 @@ rules:
   # GeoIP China
   - GEOIP,CN,DIRECT
 
-  - MATCH,MATCH
+  - MATCH,🧭 𝐹𝑖𝑛𝑎𝑙
