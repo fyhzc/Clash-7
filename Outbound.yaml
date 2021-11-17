@@ -413,4 +413,4 @@ rules:
   # GeoIP China
   - GEOIP,CN,DIRECT
 
-  - 🧭 𝐹𝑖𝑛𝑎𝑙,🧭 𝐹𝑖𝑛𝑎𝑙
+  - MATCH,🧭 𝐹𝑖𝑛𝑎𝑙
