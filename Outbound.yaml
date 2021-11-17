@@ -327,53 +327,77 @@ proxy-groups:
       - DIRECT
 
   # 𝐴𝑑𝐵𝑙𝑜𝑐𝑘
-  - name: "𝐴𝑑𝐵𝑙𝑜𝑐𝑘"
+  - name: "🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘"
     type: select
     proxies:
       - REJECT
      
   # 𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔
-  - name: "𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔"
+  - name: "🔰 𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔"
     type: select
     proxies:
       - REJECT
 
   # 𝐺𝑙𝑜𝑏𝑎𝑙
-  - name: "𝐺𝑙𝑜𝑏𝑎𝑙"
+  - name: "📡 𝐺𝑙𝑜𝑏𝑎𝑙"
     type: select
     proxies:
       - PROXY
 
   # 𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎
-  - name: "𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎"
+  - name: "📽️ 𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎"
     type: select
     proxies:
       - PROXY
 
   # 𝐺𝑜𝑜𝑔𝑙𝑒
-  - name: "𝐺𝑜𝑜𝑔𝑙𝑒"
+  - name: "🌐 𝐺𝑜𝑜𝑔𝑙𝑒"
     type: select
     proxies:
       - PROXY
 
   # 𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡
-  - name: "𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡"
+  - name: "🖥️ 𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡"
     type: select
     proxies:
       - PROXY 
 
   # 𝑇𝑤𝑖𝑡𝑡𝑒𝑟
-  - name: "𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
+  - name: "📟 𝑇𝑤𝑖𝑡𝑡𝑒𝑟"
     type: select
     proxies:
       - PROXY
 
   # 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚
-  - name: "𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚"
+  - name: "📲 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚"
     type: select
     proxies:
       - PROXY
-      
+   
+  # 𝑌𝑜𝑢𝑇𝑢𝑏𝑒
+  - name: "🎬 𝑌𝑜𝑢𝑇𝑢𝑏𝑒"
+    type: select
+    proxies:
+      - PROXY
+    
+  # 𝑁𝑒𝑡𝑓𝑙𝑖𝑥
+  - name: "📺 𝑁𝑒𝑡𝑓𝑙𝑖𝑥"
+    type: select
+    proxies:
+      - PROXY
+    
+  # 𝐷𝑖𝑠𝑛𝑒𝑦+
+  - name: "🐹 𝐷𝑖𝑠𝑛𝑒𝑦+"
+    type: select
+    proxies:
+      - PROXY
+    
+  # 𝐴𝑝𝑝𝑙𝑒
+  - name: "🍎 𝐴𝑝𝑝𝑙𝑒"
+    type: select
+    proxies:
+      - PROXY 
+    
 # 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
 
 rule-providers:
@@ -391,60 +415,88 @@ rule-providers:
     url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Unbreak.yaml
     interval: 86400
 
-  𝐴𝑑𝐵𝑙𝑜𝑐𝑘:
+  🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘:
     type: http
     behavior: classical
     path: ./AdvertisingLite/AdvertisingLite_Classical.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
     interval: 86400
 
-  𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔:
+  🔰 𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔:
     type: http
     behavior: classical
     path: ./Hijacking/Hijacking.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     interval: 86400
 
-  𝐺𝑙𝑜𝑏𝑎𝑙:
+  📡 𝐺𝑙𝑜𝑏𝑎𝑙:
     type: http
     behavior: classical
     path: ./Global/Global_Classical.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
     interval: 86400
 
-  𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎:
+  📽️ 𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎:
     type: http
     behavior: classical
     path: ./GlobalMedia/GlobalMedia.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
     interval: 86400
 
-  𝐺𝑜𝑜𝑔𝑙𝑒 :
+  🌐 𝐺𝑜𝑜𝑔𝑙𝑒 :
     type: http
     behavior: classical
     path: ./Google/Google.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
     interval: 86400
 
-  𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡:
+  🖥️ 𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡:
     type: http
     behavior: classical
     path: ./Microsoft/Microsoft.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
 
-  𝑇𝑤𝑖𝑡𝑡𝑒𝑟:
+  📟 𝑇𝑤𝑖𝑡𝑡𝑒𝑟:
     type: http
     behavior: classical
     path: ./Twitter/Twitter.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
     interval: 86400
   
-  𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚:
+  📲 𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚:
     type: http
     behavior: classical
     path: ./Telegram/Telegram.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    interval: 86400
+  
+  🎬 𝑌𝑜𝑢𝑇𝑢𝑏𝑒:
+    type: http
+    behavior: classical
+    path: ./YouTube/YouTube.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    interval: 86400
+  
+  📺 𝑁𝑒𝑡𝑓𝑙𝑖𝑥:
+    type: http
+    behavior: classical
+    path: ./Netflix/Netflix.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    interval: 86400
+    
+  🐹 𝐷𝑖𝑠𝑛𝑒𝑦+:
+    type: http
+    behavior: classical
+    path: ./Disney/Disney.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    interval: 86400
+  
+  🍎 𝐴𝑝𝑝𝑙𝑒:
+    type: http
+    behavior: classical
+    path: ./Apple/Apple.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
     interval: 86400
   
   China:
@@ -459,9 +511,11 @@ rules:
   # Unbreak
   - RULE-SET,Unbreak,DIRECT
 
-  - RULE-SET,𝐴𝑑𝐵𝑙𝑜𝑐𝑘,𝐴𝑑𝐵𝑙𝑜𝑐𝑘
+  - RULE-SET,🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘,🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘
 
-  - RULE-SET,𝐺𝑙𝑜𝑏𝑎𝑙,𝐺𝑙𝑜𝑏𝑎𝑙
+  - RULE-SET,🔰 𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔,🔰 𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔
+
+  - RULE-SET,📡 𝐺𝑙𝑜𝑏𝑎𝑙,📡 𝐺𝑙𝑜𝑏𝑎𝑙
 
   - RULE-SET,𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎,𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎
 
@@ -472,6 +526,14 @@ rules:
   - RULE-SET,𝑇𝑤𝑖𝑡𝑡𝑒𝑟,𝑇𝑤𝑖𝑡𝑡𝑒𝑟
 
   - RULE-SET,𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚,𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚
+
+  - RULE-SET,𝑌𝑜𝑢𝑇𝑢𝑏𝑒,𝑌𝑜𝑢𝑇𝑢𝑏𝑒
+
+  - RULE-SET,𝑁𝑒𝑡𝑓𝑙𝑖𝑥,𝑁𝑒𝑡𝑓𝑙𝑖𝑥
+
+  - RULE-SET,𝐷𝑖𝑠𝑛𝑒𝑦+,𝐷𝑖𝑠𝑛𝑒𝑦+
+
+  - RULE-SET,𝐴𝑝𝑝𝑙𝑒,𝐴𝑝𝑝𝑙𝑒
 
   # Global Area Network
 
