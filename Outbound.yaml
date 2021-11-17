@@ -1,25 +1,25 @@
-# Port of HTTP(S) proxy server on the local end
+# 本地 HTTP(S) 代理服务器端口
 # port: 7890
 
-# Port of SOCKS5 proxy server on the local end
+# 本地 SOCKS5 代理服务器的端口
 # socks-port: 7891
 
-# Transparent proxy server port for Linux and macOS (Redirect TCP and TProxy UDP)
+# Linux 和 macOS 的透明代理服务器端口 (Redirect TCP and TProxy UDP)
 # redir-port: 7892
 
-# Transparent proxy server port for Linux (TProxy TCP and TProxy UDP)
+# 用于Linux的透明代理服务器端口 (TProxy TCP and TProxy UDP)
 # tproxy-port: 7893
 
-# HTTP(S) and SOCKS5 server on the same port
+# 同一端口的 HTTP(S) 和 SOCKS5 服务器
 mixed-port: 7890
 
-# authentication of local SOCKS5/HTTP(S) server
-# authentication:
+# 本地 SOCKS5 / HTTP(S) 服务器的身份验证
+# 验证:
 #  - "user1:pass1"
 #  - "user2:pass2"
 
-# Set to true to allow connections to the local-end server from
-# other LAN IP addresses
+# 设置为 "true"，允许从本地端服务器连接到
+# 其他局域网IP地址
 allow-lan: false
 
 # This is only applicable when `allow-lan` is `true`
