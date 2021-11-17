@@ -398,6 +398,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
     interval: 86400
 
+  𝐻𝑖𝑗𝑎𝑐𝑘𝑖𝑛𝑔:
+    type: http
+    behavior: classical
+    path: ./Hijacking/Hijacking.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
+    interval: 86400
+
   𝐺𝑙𝑜𝑏𝑎𝑙:
     type: http
     behavior: classical
@@ -433,6 +440,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
     interval: 86400
   
+  𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚:
+    type: http
+    behavior: classical
+    path: ./Telegram/Telegram.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    interval: 86400
+  
   China:
     type: http
     behavior: classical
@@ -444,6 +458,20 @@ rule-providers:
 rules:
   # Unbreak
   - RULE-SET,Unbreak,DIRECT
+
+  - RULE-SET,𝐴𝑑𝐵𝑙𝑜𝑐𝑘,𝐴𝑑𝐵𝑙𝑜𝑐𝑘
+
+  - RULE-SET,𝐺𝑙𝑜𝑏𝑎𝑙,𝐺𝑙𝑜𝑏𝑎𝑙
+
+  - RULE-SET,𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎,𝐺𝑙𝑜𝑏𝑎𝑙𝑀𝑒𝑑𝑖𝑎
+
+  - RULE-SET,𝐺𝑜𝑜𝑔𝑙𝑒,𝐺𝑜𝑜𝑔𝑙𝑒
+ 
+  - RULE-SET,𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡,𝑀𝑖𝑐𝑟𝑜𝑠𝑜𝑓𝑡
+
+  - RULE-SET,𝑇𝑤𝑖𝑡𝑡𝑒𝑟,𝑇𝑤𝑖𝑡𝑡𝑒𝑟
+
+  - RULE-SET,𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚,𝑇𝑒𝑙𝑒𝑔𝑟𝑎𝑚
 
   # Global Area Network
 
