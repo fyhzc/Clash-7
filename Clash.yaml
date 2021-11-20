@@ -226,7 +226,17 @@ proxy-providers:
 
   # 此处只是订阅示例，如果没有订阅链接的使用需求，此处及 proxy-groups 的相关内容可删除
 
-  ClashList: #「冲鸭机场」订阅
+Home: #「回家订阅」
+    type: http
+    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Home" # 放机场订阅链接
+    interval: 3600
+    path: ./Proxy/Home.yaml # 注意此处文件名不可相同
+    health-check:
+      enable: true
+      interval: 600
+      url: http://cp.cloudflare.com/generate_204
+
+ClashList: #「机场订阅」
     type: http
     url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash" # 放机场订阅链接
     interval: 3600
@@ -236,15 +246,36 @@ proxy-providers:
       interval: 600
       url: http://cp.cloudflare.com/generate_204
   
-  Home: #「回家」订阅
+ClashList-HK: #「机场订阅」
     type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Home" # 放机场订阅链接
+    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-HK" # 放机场订阅链接
     interval: 3600
-    path: ./Proxy/Home.yaml # 注意此处文件名不可相同
+    path: ./Proxy/Clash-HK.yaml # 注意此处文件名不可相同
     health-check:
       enable: true
       interval: 600
       url: http://cp.cloudflare.com/generate_204
+  
+ClashList-US: #「机场订阅」
+    type: http
+    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-US" # 放机场订阅链接
+    interval: 3600
+    path: ./Proxy/Clash-US.yaml # 注意此处文件名不可相同
+    health-check:
+      enable: true
+      interval: 600
+      url: http://cp.cloudflare.com/generate_204
+  
+ClashList-SG: #「机场订阅」
+    type: http
+    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-SG" # 放机场订阅链接
+    interval: 3600
+    path: ./Proxy/Clash-SG.yaml # 注意此处文件名不可相同
+    health-check:
+      enable: true
+      interval: 600
+      url: http://cp.cloudflare.com/generate_204
+  
   
   # DuckDuckGoUS: #「冲鸭机场」订阅美国地区节点
   #   type: http
@@ -370,7 +401,37 @@ proxy-groups:
     type: select
     proxies:
       - 🖲️ 𝑃𝑟𝑜𝑥𝑦 
-    
+  
+  # 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔
+   - name: "🇭🇰 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔"
+    type: url-test
+    use: # 注意此处是「use」
+      - ClashList-HK # 这是上面「proxy-providers」的名称
+    # tolerance: 150
+    # lazy: true
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: 300
+   
+   # 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠
+   - name: "🇺🇸 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠"
+    type: url-test
+    use: # 注意此处是「use」
+      - ClashList-US # 这是上面「proxy-providers」的名称
+    # tolerance: 150
+    # lazy: true
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: 300
+   
+   # 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒
+   - name: "🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒"
+    type: url-test
+    use: # 注意此处是「use」
+      - ClashList-SG # 这是上面「proxy-providers」的名称
+    # tolerance: 150
+    # lazy: true
+    url: 'http://cp.cloudflare.com/generate_204'
+    interval: 300
+   
 # 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
 
 rule-providers:
