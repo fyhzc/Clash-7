@@ -173,7 +173,7 @@ proxies:
 # 支持的协议及加密算法示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/wiki/configuration
 
   # Snell
-  - name: "🏠 home"
+  - name: "🏠 𝐻𝑜𝑚𝑒"
     type: snell
     server: www.spades-2.com
     port: 13254
@@ -226,7 +226,7 @@ proxy-providers:
 
   # 此处只是订阅示例，如果没有订阅链接的使用需求，此处及 proxy-groups 的相关内容可删除
 
-  Home: #「回家订阅」
+ 🏠 𝐻𝑜𝑚𝑒: #「回家订阅」
     type: http
     url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Home" # 放机场订阅链接
     interval: 3600
@@ -347,9 +347,9 @@ proxy-groups:
   - name: "🧭 𝐹𝑖𝑛𝑎𝑙"
     type: select
     use: # 注意此处是「use」
-      - Home # 这是上面「proxy-providers」的名称
+      - 🏠 𝐻𝑜𝑚𝑒 # 这是上面「proxy-providers」的名称
     proxies:
-      - 🏠 home
+      - 🏠 𝐻𝑜𝑚𝑒
       - 🇭🇰 aliyun snell 8
       - 🇭🇰 tencent snell 101
  
