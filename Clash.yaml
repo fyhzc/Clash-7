@@ -246,37 +246,6 @@ proxy-providers:
       interval: 600
       url: http://cp.cloudflare.com/generate_204
   
-  𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔: #「机场订阅」
-    type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-HK" # 放机场订阅链接
-    interval: 3600
-    path: ./Proxy/Clash-HK.yaml # 注意此处文件名不可相同
-    health-check:
-      enable: true
-      interval: 600
-      url: http://cp.cloudflare.com/generate_204
-  
-  𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠: #「机场订阅」
-    type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-US" # 放机场订阅链接
-    interval: 3600
-    path: ./Proxy/Clash-US.yaml # 注意此处文件名不可相同
-    health-check:
-      enable: true
-      interval: 600
-      url: http://cp.cloudflare.com/generate_204
-  
-  𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒: #「机场订阅」
-    type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-SG" # 放机场订阅链接
-    interval: 3600
-    path: ./Proxy/Clash-SG.yaml # 注意此处文件名不可相同
-    health-check:
-      enable: true
-      interval: 600
-      url: http://cp.cloudflare.com/generate_204
-  
-  
   # DuckDuckGoUS: #「冲鸭机场」订阅美国地区节点
   #   type: http
   #   url: "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/ProxyList/US.yaml" # 放机场订阅链接
@@ -400,37 +369,7 @@ proxy-groups:
   - name: "🍎 𝐴𝑝𝑝𝑙𝑒"
     type: select
     proxies:
-      - 🖲️ 𝑃𝑟𝑜𝑥𝑦 
-  
-  # 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔
-   - name: "🇭🇰 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔"
-     type: url-test
-     use: # 注意此处是「use」
-       - 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔 # 这是上面「proxy-providers」的名称
-    # tolerance: 150
-    # lazy: true
-     url: 'http://cp.cloudflare.com/generate_204'
-     interval: 300
-   
-   # 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠
-   - name: "🇺🇸 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠"
-     type: url-test
-     use: # 注意此处是「use」
-       - 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠 # 这是上面「proxy-providers」的名称
-    # tolerance: 150
-    # lazy: true
-     url: 'http://cp.cloudflare.com/generate_204'
-     interval: 300
-    
-   # 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒
-   - name: "🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒"
-     type: url-test
-     use: # 注意此处是「use」
-       - 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒 # 这是上面「proxy-providers」的名称
-    # tolerance: 150
-    # lazy: true
-     url: 'http://cp.cloudflare.com/generate_204'
-     interval: 300
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦  
    
 # 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
 
