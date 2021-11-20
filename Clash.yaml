@@ -173,7 +173,7 @@ proxies:
 # 支持的协议及加密算法示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/wiki/configuration
 
   # Snell
-  - name: "home"
+  - name: "🏠 home"
     type: snell
     server: www.spades-2.com
     port: 13254
@@ -184,7 +184,7 @@ proxies:
       host: www.spades-2.icu
 
   # Snell
-  - name: "aliyun snell 8"
+  - name: "🇭🇰 aliyun snell 8"
     type: snell
     server: www.spades-2.icu
     port: 13254
@@ -195,7 +195,7 @@ proxies:
       host: www.spades-2.icu
 
   # Snell
-  - name: "tencent snell 101"
+  - name: "🇭🇰 tencent snell 101"
     type: snell
     server: qte.spades-2.icu
     port: 13254
@@ -289,9 +289,9 @@ proxy-groups:
     use: # 注意此处是「use」
       - Home # 这是上面「proxy-providers」的名称
     proxies:
-      - home
-      - aliyun snell 8
-      - tencent snell 101
+      - 🏠 home
+      - 🇭🇰 aliyun snell 8
+      - 🇭🇰 tencent snell 101
  
   # 代理节点选择
   - name: "🖲️ 𝑃𝑟𝑜𝑥𝑦"
