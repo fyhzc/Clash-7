@@ -172,52 +172,38 @@ dns:
 proxies:
 # 支持的协议及加密算法示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/wiki/configuration
 
-  # Shadowsocks(Websocket + TLS)
-  - name: "1"
-    type: ss
-    server: server
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: "password"
-    plugin: v2ray-plugin
-    plugin-opts:
-      mode: websocket # no QUIC now
-      tls: true # wss
-      # skip-cert-verify: true
-      # host: bing.com
-      path: "/s"
-      # mux: true
-      # headers:
-      #   custom: value
+  # Snell
+  - name: "home"
+    type: snell
+    server: www.spades-2.com
+    port: 13254
+    psk: UcB6yL3KOEIu6ZjR
+    # version: 2
+    obfs-opts:
+      mode: tls
+      host: www.spades-2.icu
 
-  # VMess(Websocket + TLS)
-  - name: "2"
-    type: vmess
-    server: v2ray.cool
-    port: 443
-    uuid: a3482e88-686a-4a58-8126-99c9df64b7bf
-    alterId: 32
-    cipher: auto
-    # udp: true
-    tls: true
-    # skip-cert-verify: true
-    network: ws
-    ws-path: /v
-    # ws-headers:
-    #   Host: v2ray.com
+  # Snell
+  - name: "aliyun snell 8"
+    type: snell
+    server: www.spades-2.icu
+    port: 13254
+    psk: m5IsoC9wPFIThSKo
+    # version: 2
+    obfs-opts:
+      mode: tls
+      host: www.spades-2.icu
 
-  # Trojan
-  - name: "3"
-    type: trojan
-    server: server
-    port: 443
-    password: yourpsk
-    # udp: true
-    # sni: example.com # aka server name
-    # alpn:
-    #   - h2
-    #   - http/1.1
-    # skip-cert-verify: true
+  # Snell
+  - name: "tencent snell 101"
+    type: snell
+    server: qte.spades-2.icu
+    port: 13254
+    psk: 22h4UcREHWHvMHRp
+    # version: 2
+    obfs-opts:
+      mode: tls
+      host: www.spades-2.icu
 
 # 服务器节点订阅
 proxy-providers:
@@ -291,11 +277,10 @@ proxy-groups:
   #   use:
   #     - DuckDuckGo # 嵌套使用订阅节点策略组
   #   proxies:
-  #     - Fallback
-  #     - 1
-  #     - 2
-  #     - 3
-  #
+  #     - home
+  #     - aliyun snell 8
+  #     - tencent snell 101
+
   # 但如果订阅节点很多选起来就很麻烦，不如先嵌套一个策略组进行手动或自动的选择。
   
   # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
@@ -303,6 +288,10 @@ proxy-groups:
     type: select
     use: # 注意此处是「use」
       - Home # 这是上面「proxy-providers」的名称
+    proxies:
+      - home
+      - aliyun snell 8
+      - tencent snell 101
  
   # 代理节点选择
   - name: "🖲️ 𝑃𝑟𝑜𝑥𝑦"
