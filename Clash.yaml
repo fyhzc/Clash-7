@@ -266,35 +266,35 @@ proxy-providers:
       interval: 600
       url: http://cp.cloudflare.com/generate_204
   
-  🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒: #「机场订阅」
-    type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-SG" # 放机场订阅链接
-    interval: 3600
-    path: ./Proxy/SG.yaml # 注意此处文件名不可相同
-    health-check:
-      enable: true
-      interval: 600
-      url: http://cp.cloudflare.com/generate_204
+  #🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒: #「机场订阅」
+  #  type: http
+  #  url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-SG" # 放机场订阅链接
+  #  interval: 3600
+  #  path: ./Proxy/SG.yaml # 注意此处文件名不可相同
+  #  health-check:
+  #    enable: true
+  #    interval: 600
+  #    url: http://cp.cloudflare.com/generate_204
   
-  🇰🇷 𝐾𝑜𝑟𝑒𝑎: #「机场订阅」
-    type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-KR" # 放机场订阅链接
-    interval: 3600
-    path: ./Proxy/KR.yaml # 注意此处文件名不可相同
-    health-check:
-      enable: true
-      interval: 600
-      url: http://cp.cloudflare.com/generate_204
+  #🇰🇷 𝐾𝑜𝑟𝑒𝑎: #「机场订阅」
+  #  type: http
+  #  url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-KR" # 放机场订阅链接
+  #  interval: 3600
+  #  path: ./Proxy/KR.yaml # 注意此处文件名不可相同
+ #   health-check:
+  #    enable: true
+   #   interval: 600
+  #    url: http://cp.cloudflare.com/generate_204
   
-  🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛: #「机场订阅」
-    type: http
-    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-TW" # 放机场订阅链接
-    interval: 3600
-    path: ./Proxy/TW.yaml # 注意此处文件名不可相同
-    health-check:
-      enable: true
-      interval: 600
-      url: http://cp.cloudflare.com/generate_204
+ # 🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛: #「机场订阅」
+  #  type: http
+  #  url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Clash-TW" # 放机场订阅链接
+  #  interval: 3600
+ #   path: ./Proxy/TW.yaml # 注意此处文件名不可相同
+ #   health-check:
+ #     enable: true
+ #     interval: 600
+  #    url: http://cp.cloudflare.com/generate_204
   
   # DuckDuckGoUS: #「冲鸭机场」订阅美国地区节点
   #   type: http
@@ -403,7 +403,7 @@ proxy-groups:
     type: select
     proxies:
       - 🖲️ 𝑃𝑟𝑜𝑥𝑦
-      - 🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛
+  #    - 🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛
    
   # 𝑌𝑜𝑢𝑇𝑢𝑏𝑒
   - name: "🎬 𝑌𝑜𝑢𝑇𝑢𝑏𝑒"
@@ -418,9 +418,9 @@ proxy-groups:
     proxies:
       - 🖲️ 𝑃𝑟𝑜𝑥𝑦
       - 🇭🇰 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔
-      - 🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒
+  #    - 🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒
       - 🇺🇸 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠 
-      - 🇯🇵 𝐽𝑎𝑝𝑎𝑛
+  #    - 🇯🇵 𝐽𝑎𝑝𝑎𝑛
        
   # 𝐷𝑖𝑠𝑛𝑒𝑦+
   - name: "🐹 𝐷𝑖𝑠𝑛𝑒𝑦+"
@@ -451,29 +451,29 @@ proxy-groups:
     use: # 注意此处是「use」
       - 🇺🇸 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠 # 这是上面「proxy-providers」的名称
    
-  - name: "🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒"
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use: # 注意此处是「use」
-      - 🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒 # 这是上面「proxy-providers」的名称
+  #- name: "🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒"
+  #  type: url-test
+  #  url: http://www.gstatic.com/generate_204
+  #  interval: 300
+  #  tolerance: 50
+  #  use: # 注意此处是「use」
+  #    - 🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒 # 这是上面「proxy-providers」的名称
    
-   - name: "🇰🇷 𝐾𝑜𝑟𝑒𝑎"
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use: # 注意此处是「use」
-      - 🇰🇷 𝐾𝑜𝑟𝑒𝑎 # 这是上面「proxy-providers」的名称
+  # - name: "🇰🇷 𝐾𝑜𝑟𝑒𝑎"
+  #  type: url-test
+  #  url: http://www.gstatic.com/generate_204
+  #  interval: 300
+  #  tolerance: 50
+  #  use: # 注意此处是「use」
+  #    - 🇰🇷 𝐾𝑜𝑟𝑒𝑎 # 这是上面「proxy-providers」的名称
    
-   - name: "🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛"
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use: # 注意此处是「use」
-      - 🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛 # 这是上面「proxy-providers」的名称
+  # - name: "🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛"
+  #  type: url-test
+  #  url: http://www.gstatic.com/generate_204
+  #  interval: 300
+  #  tolerance: 50
+  #  use: # 注意此处是「use」
+  #    - 🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛 # 这是上面「proxy-providers」的名称
    
    
    
