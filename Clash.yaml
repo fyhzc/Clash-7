@@ -250,6 +250,16 @@ proxy-providers:
       interval: 600
       url: http://cp.cloudflare.com/generate_204
   
+  Home: #「回家」订阅
+    type: http
+    url: "https://gist.githubusercontent.com/Spades-2/e45d9348d500aa77697ccd4a1b5b4765/raw/Home" # 放机场订阅链接
+    interval: 3600
+    path: ./Proxy/Home.yaml # 注意此处文件名不可相同
+    health-check:
+      enable: true
+      interval: 600
+      url: http://cp.cloudflare.com/generate_204
+  
   # DuckDuckGoUS: #「冲鸭机场」订阅美国地区节点
   #   type: http
   #   url: "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/ProxyList/US.yaml" # 放机场订阅链接
@@ -287,20 +297,19 @@ proxy-groups:
   #     - 3
   #
   # 但如果订阅节点很多选起来就很麻烦，不如先嵌套一个策略组进行手动或自动的选择。
-
+  
+  # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
+  - name: "🧭 𝐹𝑖𝑛𝑎𝑙"
+    type: select
+    use: # 注意此处是「use」
+      - Home # 这是上面「proxy-providers」的名称
+ 
   # 代理节点选择
   - name: "🖲️ 𝑃𝑟𝑜𝑥𝑦"
     type: select
     use: # 注意此处是「use」
-      - ClashList # 这是上面「proxy-providers」的名称
-
-  # 白名单模式 PROXY, 黑名单模式 DIRECT, 不知道别动
-  - name: "🧭 𝐹𝑖𝑛𝑎𝑙"
-    type: select
-    proxies:
-     - DIRECT
-     - 🖲️ 𝑃𝑟𝑜𝑥𝑦
-      
+      - ClashList # 这是上面「proxy-providers」的名称 
+  
   # 𝐴𝑑𝐵𝑙𝑜𝑐𝑘
   - name: "🚫 𝐴𝑑𝐵𝑙𝑜𝑐𝑘"
     type: select
