@@ -435,7 +435,7 @@ proxy-groups:
     proxies:
       - 🖲️ 𝑃𝑟𝑜𝑥𝑦  
    
-  - name: 🇭🇰 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔
+  - name: "🇭🇰 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -443,7 +443,7 @@ proxy-groups:
     use: # 注意此处是「use」
       - 🇭🇰 𝐻𝑜𝑛𝑔 𝐾𝑜𝑛𝑔 # 这是上面「proxy-providers」的名称
    
-  - name: 🇺🇸 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠
+  - name: "🇺🇸 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -451,7 +451,7 @@ proxy-groups:
     use: # 注意此处是「use」
       - 🇺🇸 𝑈𝑛𝑖𝑡𝑒𝑑 𝑆𝑡𝑎𝑡𝑒𝑠 # 这是上面「proxy-providers」的名称
    
-  - name: 🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒
+  - name: "🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -459,7 +459,7 @@ proxy-groups:
     use: # 注意此处是「use」
       - 🇸🇬 𝑆𝑖𝑛𝑔𝑎𝑝𝑜𝑟𝑒 # 这是上面「proxy-providers」的名称
    
-   - name: 🇰🇷 𝐾𝑜𝑟𝑒𝑎
+   - name: "🇰🇷 𝐾𝑜𝑟𝑒𝑎"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -467,7 +467,7 @@ proxy-groups:
     use: # 注意此处是「use」
       - 🇰🇷 𝐾𝑜𝑟𝑒𝑎 # 这是上面「proxy-providers」的名称
    
-   - name: 🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛
+   - name: "🇼🇸 𝑇𝑎𝑖𝑤𝑎𝑛"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
