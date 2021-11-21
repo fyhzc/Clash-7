@@ -520,7 +520,7 @@ rule-providers:
   Unbreak:
     type: http
     behavior: classical
-    path: ./RuleSet/Unbreak.yaml
+    path: ./Unbreak/Unbreak.yaml
     url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Unbreak.yaml
     interval: 86400
 
@@ -611,7 +611,7 @@ rule-providers:
   China:
     type: http
     behavior: classical
-    path: ./RuleSet/China.yaml
+    path: ./China/China.yaml
     url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/China.yaml
     interval: 86400
 
