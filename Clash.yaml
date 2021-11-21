@@ -352,6 +352,7 @@ proxy-groups:
       - 🏠 𝐻𝑜𝑚𝑒 # 这是上面「proxy-providers」的名称
     proxies:
       - DIRECT
+      - 🖲️ 𝑃𝑟𝑜𝑥𝑦
       - 🏠 𝐻𝑜𝑚𝑒
       - 🇭🇰 𝐴𝑙𝑖𝑦𝑢𝑛 𝑠𝑛𝑒𝑙𝑙 8
       - 🇭🇰 𝑇𝑒𝑛𝑐𝑒𝑛𝑡 𝑠𝑛𝑒𝑙𝑙 101
