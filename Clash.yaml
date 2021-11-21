@@ -83,15 +83,16 @@ profile:
 # DNS server settings
 # This section is optional. When not present, the DNS server will be disabled.
 dns:
-  enable: false
+  enable: true
   listen: 0.0.0.0:53
   # ipv6: false # when the false, response to AAAA questions will be empty
 
   # These nameservers are used to resolve the DNS nameserver hostnames below.
   # Specify IP addresses only
   default-nameserver:
+    - 162.14.132.76
     - 119.29.29.29
-  enhanced-mode: redir-host # or fake-ip
+  enhanced-mode: fake-ip # or redir-host
   fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
   # use-hosts: true # lookup hosts and return IP record
   
@@ -117,7 +118,9 @@ dns:
   # All DNS questions are sent directly to the nameserver, without proxies
   # involved. Clash answers the DNS question with the first result gathered.
   nameserver:
+    - 162.14.132.76
     - 119.29.29.29
+    - https://162.14.132.76/dns-query
     # - 114.114.114.114 # default value
     # - 8.8.8.8 # default value
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
@@ -160,14 +163,13 @@ dns:
 #
 # https://github.com/Dreamacro/clash/wiki/premium-core-features
 #
-# tun:
-#   enable: true
-#   stack: system # or gvisor
-#   # dns-hijack:
-#   #   - 8.8.8.8:53
-#   #   - tcp://8.8.8.8:53
-#   macOS-auto-route: true # auto set global route
-#   macOS-auto-detect-interface: true # conflict with interface-name
+tun:
+  enable: true
+  stack: system # or gvisor
+  dns-hijack:
+     - 198.18.0.2:53
+  macOS-auto-route: true # auto set global route
+  macOS-auto-detect-interface: true # conflict with interface-name
 
 proxies:
 # 支持的协议及加密算法示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/wiki/configuration
