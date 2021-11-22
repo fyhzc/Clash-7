@@ -92,7 +92,7 @@ dns:
   default-nameserver:
     - 162.14.132.76
     - 119.29.29.29
-  enhanced-mode: fake-ip # or redir-host
+  enhanced-mode: redir-host # or fake-ip
   fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
   # use-hosts: true # lookup hosts and return IP record
   
@@ -163,13 +163,14 @@ dns:
 #
 # https://github.com/Dreamacro/clash/wiki/premium-core-features
 #
-tun:
-  enable: true
-  stack: system # or gvisor
-  dns-hijack:
-     - 198.18.0.2:53
-  macOS-auto-route: true # auto set global route
-  macOS-auto-detect-interface: true # conflict with interface-name
+# tun:
+#   enable: true
+#   stack: system # or gvisor
+#   # dns-hijack:
+#   #   - 8.8.8.8:53
+#   #   - tcp://8.8.8.8:53
+#   macOS-auto-route: true # auto set global route
+#   macOS-auto-detect-interface: true # conflict with interface-name
 
 proxies:
 # 支持的协议及加密算法示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/wiki/configuration
